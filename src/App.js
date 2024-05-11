@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Ankit
+          Ankit Kumar
         </a>
       </header>
     </div>
