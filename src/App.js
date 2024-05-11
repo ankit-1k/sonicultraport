@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Ankit Kumar Panda is a good 
+          Ankit Kumar Panda is a good person
         </a>
       </header>
     </div>
