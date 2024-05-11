@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Ankit Kumar Panda
+          Ankit Kumar Panda is 
         </a>
       </header>
     </div>
