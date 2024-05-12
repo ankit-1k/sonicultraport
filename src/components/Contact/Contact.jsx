@@ -61,7 +61,7 @@ const Contact = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email">Email:</label>
                         <input
                             type="email"
                             id="email"
