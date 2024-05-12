@@ -15,20 +15,37 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Add your form submission logic here, e.g., send data to backend
-
-        // Reset form fields
-        setFormData({
-            name: '',
-            email: '',
-            message: ''
-        });
-    };
+    
+        // Sending form data to Firebase
+        try {
+          const response = await fetch('https://fireexp-6380f-default-rtdb.firebaseio.com/fireexp.json', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+    
+          if (response.ok) {
+            alert('Form submitted successfully!');
+            setFormData({
+              name: '',
+              email: '',
+              message: '',
+            });
+          } else {
+            throw new Error('Failed to submit form');
+          }
+        } catch (error) {
+          console.error('Error submitting form:', error);
+          alert('Failed to submit form. Please try again.');
+        }
+      };
 
     return (
-        <div style={{ marginTop: '70px' }}>
+        <div style={{ marginTop: '110px',marginBottom:'40px' }}>
             <div className="contact-container">
                 <h2 style={{ textAlign: 'center' }}>Contact Me</h2>
                 <form onSubmit={handleSubmit}>
