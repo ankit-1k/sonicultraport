@@ -11,10 +11,9 @@ function AboutCard() {
             Hi Everyone, I am <span className="purple">Ankit Kumar Panda </span>
             from <span className="purple"> Bhubaneswar, India.</span>
             <br />
-            I am currently employed as a software developer at Juspay.
+            I am currently employed as a software developer at Skill Technologies.
             <br />
-            I have completed Integrated MSc (IMSc) in Maths and Computing at BIT
-            Mesra.
+            I specialize in building responsive web designs using HTML, CSS, Bootstrap, and JavaScript. Proficient in React, Node.js, and Firebase, I focus on creating user-friendly interfaces for clients.
             <br />
             <br />
             Apart from coding, some other activities that I love to do!
@@ -24,7 +23,7 @@ function AboutCard() {
               <ImPointRight /> Playing Games
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
+              <ImPointRight /> Reading Tech Blogs
             </li>
             <li className="about-activity">
               <ImPointRight /> Travelling
@@ -32,9 +31,9 @@ function AboutCard() {
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
+            "Turning code into captivating digital experiences."{" "}
           </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
+          <footer className="blockquote-footer">Ankit</footer>
         </blockquote>
       </Card.Body>
     </Card>
