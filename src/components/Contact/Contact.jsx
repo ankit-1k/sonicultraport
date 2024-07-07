@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import './contact.css'
+import React, { useState } from 'react';
+import './contact.css';
+import axios from 'axios'; // Import Axios for HTTP requests
+
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -15,37 +17,25 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-    
-        // Sending form data to Firebase
-        try {
-          const response = await fetch('https://fireexp-6380f-default-rtdb.firebaseio.com/fireexp.json', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-          });
-    
-          if (response.ok) {
-            alert('Form submitted successfully!');
-            setFormData({
-              name: '',
-              email: '',
-              message: '',
-            });
-          } else {
-            throw new Error('Failed to submit form');
-          }
-        } catch (error) {
-          console.error('Error submitting form:', error);
-          alert('Failed to submit form. Please try again.');
-        }
-      };
+    // Inside frontend Contact.js component
+const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    console.log('Form Data:', formData);
+  
+    try {
+      await axios.post('http://localhost:4000/api/contact', formData);
+      alert('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Failed to send message. Please try again later.');
+    }
+  };
+  
 
     return (
-        <div style={{ marginTop: '110px',marginBottom:'40px' }}>
+        <div style={{ marginTop: '110px', marginBottom: '40px' }}>
             <div className="contact-container">
                 <h2 style={{ textAlign: 'center' }}>Contact Me</h2>
                 <form onSubmit={handleSubmit}>
@@ -61,7 +51,7 @@ const Contact = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="email">Emaill:</label>
+                        <label htmlFor="email">Email:</label>
                         <input
                             type="email"
                             id="email"
@@ -98,7 +88,7 @@ const Contact = () => {
                 </form>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Contact
+export default Contact;
