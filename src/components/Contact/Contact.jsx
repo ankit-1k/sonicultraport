@@ -24,7 +24,7 @@ const handleSubmit = async (e) => {
     console.log('Form Data:', formData);
   
     try {
-      await axios.post('http://localhost:4000/api/contact', formData);
+      await axios.post('https://portbackend.vercel.app/api/contact', formData);
       alert('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
