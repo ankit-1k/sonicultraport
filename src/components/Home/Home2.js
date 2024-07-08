@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
+import myImg from "../../Assets/myImg.jpeg";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
@@ -8,8 +8,10 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Home2() {
+  const navigate=useNavigate()
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
@@ -24,32 +26,15 @@ function Home2() {
               <br />
               <br />
               I'm a dedicated software developer proficient in React, Node.js, and Firebase, crafting impactful web solutions for businesses and individuals.
-              {/* <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also in areas related to{" "}
-                <b className="purple">
-                  Blockchain.
-                </b>
-              </i> */}
-              {/* <br />
-              <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
-              <i>
-                <b className="purple">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> React.js and Next.js</b>
-              </i> */}
+              <button class="button-readmore mt-3" onClick={()=>navigate('/blog')}>
+              <span class="text">more</span>
+              <svg class="arrow" viewBox="0 0 448 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
+            </button>
             </p>
           </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img src={myImg} height={300} width={200} className="img-fluid rounded-3" alt="avatar" />
             </Tilt>
           </Col>
         </Row>
