@@ -35,7 +35,7 @@ function Footer() {
                   <li onClick={()=>window.open('https://sonicsupportfrontend.vercel.app/')}>SonicSupport</li>
                   <li onClick={()=>window.open('https://ankit5116k.netlify.app/')}>SonicPort</li>
                   <li onClick={()=>window.open('https://hydpg.netlify.app/')}>HydPG</li>
-                  <li onClick={()=>window.open('https://ankit-1k.github.io/SIIM/')}>SIIM</li>
+                  {/* <li onClick={()=>window.open('https://ankit-1k.github.io/SIIM/')}>SIIM</li> */}
                 </ul>
               </div>
             </div>
@@ -98,3 +98,4 @@ function Footer() {
 }
 
 export default Footer;
+//gfhgfghhgfhgfhhhgj
