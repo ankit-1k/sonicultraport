@@ -19,7 +19,7 @@ function Footer() {
           <Col md="3" className="footer-copywright">
             <h3>Present Address:</h3>
             <p>
-              Kondapur, Hydrabad, TS, India
+              Hitech City, Hydrabad, TS, India
             </p>
             <h3>Permanent Address:</h3>
             <p>
