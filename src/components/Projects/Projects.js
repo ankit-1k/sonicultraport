@@ -11,21 +11,28 @@ import sonicsupport from "../../Assets/Projects/sonicsupport.png";
 import axios from "axios";
 
 function Projects() {
-  const [projects,setProjects]=useState([])
+  const [projects, setProjects] = useState([]);
 
-  const fetchProject=async()=>{
+  const fetchProject = async () => {
     try {
-      const response=await axios.get('https://sonicadminbackend.vercel.app/api/getproject')
-      setProjects(response)
-      console.log(response)
+      const response = await axios.get(
+        "https://sonicadminbackend.vercel.app/api/getproject"
+      );
+      setProjects(response.data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
-  useEffect(()=>{
-    fetchProject()
-  },[])
+  useEffect(() => {
+    fetchProject();
+  }, []);
+
+  const formatDate = (isoDate) => {
+    const options = { year: "numeric", month: "long", day: "numeric" }; // E.g., January 18, 2025
+    return new Date(isoDate).toLocaleDateString(undefined, options);
+  };
+
   return (
     <Container fluid className="project-section">
       <Particle />
@@ -37,17 +44,25 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={sonicpholeo}
-              isBlog={false}
-              title="Sonicpholleo"
-              description="Sonicpholleo is a voice-controlled website, allowing users to interact hands-free, navigate effortlessly, and experience a new level of accessibility and convenience in browsing."
-              demoLink="https://ankit5116k.netlify.app/"
-            />
-          </Col>
+          {projects.length > 0 ? (
+            projects
+              .filter((project) => project.category === "ankitkumarpanda")
+              .map((project, index) => (
+                <Col md={4} className="project-card">
+                  <ProjectCard
+                    imgPath={project.imageUrl}
+                    isBlog={false}
+                    title={project.name}
+                    description={project.desc}
+                    demoLink={project.demo}
+                  />
+                </Col>
+              ))
+          ) : (
+            <p>No projects available</p>
+          )}
 
-          <Col md={4} className="project-card">
+          {/* <Col md={4} className="project-card">
             <ProjectCard
               imgPath={sonicsupport}
               isBlog={false}
@@ -86,7 +101,7 @@ function Projects() {
               ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
             demoLink="https://ankit-1k.github.io/SIIM/"  
             />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </Container>
