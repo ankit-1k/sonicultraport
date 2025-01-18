@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './blog.css'
+import axios from 'axios'
 const Blog = () => {
+    const [blogData,setBlogData]=useState([])
+    
+    const fetchBlogs=async()=>{
+        try {
+            const response=await axios.get('https://sonicadminbackend.vercel.app/api/getblog')
+            setBlogData(response.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    console.log('getting data ',blogData)
+    useEffect(()=>{
+        fetchBlogs()
+    },[])
     return (
         <div className='blog-section'>
             <div className="container">
