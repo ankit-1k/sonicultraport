@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
@@ -8,8 +8,24 @@ import hydpg from "../../Assets/Projects/hydpg.png";
 import sonicpholeo from "../../Assets/Projects/sonicport.png";
 import flimflix from "../../Assets/Projects/flimflix.png";
 import sonicsupport from "../../Assets/Projects/sonicsupport.png";
+import axios from "axios";
 
 function Projects() {
+  const [projects,setProjects]=useState([])
+
+  const fetchProject=async()=>{
+    try {
+      const response=await axios.get('https://sonicadminbackend.vercel.app/api/getproject')
+      setProjects(response)
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(()=>{
+    fetchProject()
+  },[])
   return (
     <Container fluid className="project-section">
       <Particle />
@@ -27,7 +43,6 @@ function Projects() {
               isBlog={false}
               title="Sonicpholleo"
               description="Sonicpholleo is a voice-controlled website, allowing users to interact hands-free, navigate effortlessly, and experience a new level of accessibility and convenience in browsing."
-              // ghLink="https://github.com/soumyajit4419/Chatify"
               demoLink="https://ankit5116k.netlify.app/"
             />
           </Col>
@@ -38,7 +53,6 @@ function Projects() {
               isBlog={false}
               title="Bits-0f-C0de"
               description="A website for students offering notes and a unique feature: asking questions and receiving answers using voice commands, enhancing learning and accessibility."
-              // ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
               demoLink="https://sonicsupport.netlify.app/"
             />
           </Col>
@@ -50,7 +64,6 @@ function Projects() {
               isBlog={false}
               title="HYDPG"
               description="Crafted a user-friendly React platform for PG search in Hyderabad, integrating dynamic components and efficient data management for seamless browsing and quick information retrieval."
-              // ghLink="https://github.com/soumyajit4419/Plant_AI"
               demoLink="https://plant49-ai.herokuapp.com/"
             />
           </Col>
@@ -60,7 +73,6 @@ function Projects() {
               isBlog={false}
               title="FlimFlix"
               description="Launched FilmFlix, a dynamic website with Bollywood, Hollywood, and Tollywood movies. User-friendly design ensures seamless browsing, accessibility, and updated movie selections."
-              // ghLink="https://github.com/soumyajit4419/Editor.io"
               demoLink="https://ankit-1k.github.io/movie-website/"
             />
           </Col>
