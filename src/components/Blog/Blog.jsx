@@ -1,40 +1,50 @@
-import React, { useEffect, useState } from 'react'
-import './blog.css'
-import axios from 'axios'
+import React, { useEffect, useState } from "react";
+import "./blog.css";
+import axios from "axios";
 const Blog = () => {
-    const [blogData,setBlogData]=useState([])
-    
-    const fetchBlogs=async()=>{
-        try {
-            const response=await axios.get('https://sonicadminbackend.vercel.app/api/getblog')
-            setBlogData(response.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    console.log('getting data ',blogData)
-    useEffect(()=>{
-        fetchBlogs()
-    },[])
-    return (
-        <div className='blog-section'>
-            <div className="container">
-                <div className='d-flex justify-content-between'>
-                    <div class="card-blog">
-                        <p class="">
-                            @google/generative-ai integration
-                        </p>
-                        <p>
-                            Excited to integrate @google/generative-ai into my React and Node.js app! 🎉 This enhances user experiences, boosts automation, and sparks innovation. Big thanks to Google for this amazing tool! 🙌 Let's embrace the future of AI together! 🚀
-                        </p>
-                        <p>
-                            DT: 02-07-24
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+  const [blogData, setBlogData] = useState([]);
 
-export default Blog
+  const fetchBlogs = async () => {
+    try {
+      const response = await axios.get(
+        "https://sonicadminbackend.vercel.app/api/getblog"
+      );
+      setBlogData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  const formatDate = (isoDate) => {
+    const options = { year: "numeric", month: "long", day: "numeric" }; // E.g., January 18, 2025
+    return new Date(isoDate).toLocaleDateString(undefined, options);
+  };
+
+  return (
+    <div className="blog-section">
+      <div className="container">
+        <div className="d-flex justify-content-between">
+          {blogData.length > 0 ? (
+            blogData
+              .filter((blog) => blog.category === "ankitkumarpanda") 
+              .map((blog, index) => (
+                <div key={index} className="card-blog">
+                  <p className="">{blog.name}</p>
+                  <p>{blog.desc}</p>
+                  <p>{formatDate(blog.date)}</p>
+                </div>
+              ))
+          ) : (
+            <p>No blogs available</p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Blog;
