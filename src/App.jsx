@@ -35,7 +35,7 @@ function App() {
 
   useEffect(()=>{
     fetchAnnouncement()
-  })
+  },[])
 
   useEffect(() => {
     const timer = setTimeout(() => {
