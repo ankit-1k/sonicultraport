@@ -10,7 +10,6 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
@@ -18,9 +17,25 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./components/Contact/Contact";
 import Blog from "./components/Blog/Blog";
+import axios from "axios";
 
 function App() {
   const [load, upadateLoad] = useState(true);
+  const [announcement,setAnnouncement]=useState([])
+
+  const fetchAnnouncement=async ()=>{
+    try {
+      const response=await axios.get('https://sonicadminbackend.vercel.app/api/getannouncement')
+      setAnnouncement(response.data)
+      console.log('announcements',announcement)
+    } catch (error) {
+      
+    }
+  }
+
+  useEffect(()=>{
+    fetchAnnouncement()
+  })
 
   useEffect(() => {
     const timer = setTimeout(() => {
