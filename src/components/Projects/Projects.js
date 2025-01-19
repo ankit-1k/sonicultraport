@@ -61,47 +61,6 @@ function Projects() {
           ) : (
             <p>No projects available</p>
           )}
-
-          {/* <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={sonicsupport}
-              isBlog={false}
-              title="Bits-0f-C0de"
-              description="A website for students offering notes and a unique feature: asking questions and receiving answers using voice commands, enhancing learning and accessibility."
-              demoLink="https://sonicsupport.netlify.app/"
-            />
-          </Col>
-
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={hydpg}
-              isBlog={false}
-              title="HYDPG"
-              description="Crafted a user-friendly React platform for PG search in Hyderabad, integrating dynamic components and efficient data management for seamless browsing and quick information retrieval."
-              demoLink="https://plant49-ai.herokuapp.com/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={flimflix}
-              isBlog={false}
-              title="FlimFlix"
-              description="Launched FilmFlix, a dynamic website with Bollywood, Hollywood, and Tollywood movies. User-friendly design ensures seamless browsing, accessibility, and updated movie selections."
-              demoLink="https://ankit-1k.github.io/movie-website/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={siim}
-              isBlog={false}
-              title="SIIM"
-              description="I've created a responsive college website template using HTML, CSS, and JavaScript. It features a clean design, adapts to various devices, and includes interactive elements for a user-friendly experience. "
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-            demoLink="https://ankit-1k.github.io/SIIM/"  
-            />
-          </Col> */}
         </Row>
       </Container>
     </Container>
