@@ -27,7 +27,7 @@ function App() {
     try {
       const response=await axios.get('https://sonicadminbackend.vercel.app/api/getannouncement')
       setAnnouncement(response)
-      console.log('announcements',response.data)
+      console.log('announcements',announcement)
     } catch (error) {
       console.log('error',error)
     }
