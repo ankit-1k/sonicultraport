@@ -29,7 +29,7 @@ function App() {
       setAnnouncement(response.data)
       console.log('announcements',announcement)
     } catch (error) {
-      
+      console.log('error',error)
     }
   }
 
