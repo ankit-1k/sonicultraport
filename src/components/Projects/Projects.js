@@ -2,13 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-// import leaf from "../../Assets/Projects/leaf.png";
-import siim from "../../Assets/Projects/siim.png";
-import hydpg from "../../Assets/Projects/hydpg.png";
-import sonicpholeo from "../../Assets/Projects/sonicport.png";
-import flimflix from "../../Assets/Projects/flimflix.png";
-import sonicsupport from "../../Assets/Projects/sonicsupport.png";
 import axios from "axios";
+import Loader from "../../Assets/loader/Loader";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -59,7 +54,9 @@ function Projects() {
                 </Col>
               ))
           ) : (
-            <p>Loading...</p>
+            <p className="mt-5 mb-5">
+              <Loader />
+            </p>
           )}
         </Row>
       </Container>
