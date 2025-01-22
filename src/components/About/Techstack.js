@@ -7,6 +7,7 @@ import {
   DiMongodb,
   DiGit,
   DiJava,
+  DiAngularSimple,
 } from "react-icons/di";
 import {
   SiFirebase,
@@ -38,13 +39,13 @@ function Techstack() {
         <SiNextdotjs />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
+        <DiAngularSimple />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiFirebase />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiJava />
+        <DiGit/>
       </Col>
     </Row>
   );

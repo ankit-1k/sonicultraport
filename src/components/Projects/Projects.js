@@ -59,7 +59,7 @@ function Projects() {
                 </Col>
               ))
           ) : (
-            <p>No projects available</p>
+            <p>Loading...</p>
           )}
         </Row>
       </Container>

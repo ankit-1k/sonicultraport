@@ -16,7 +16,7 @@ function AboutCard() {
             I am currently employed as a software developer at Skill Technologies.
             <br />
             I specialize in building responsive web designs using HTML, CSS, Bootstrap,
-            and JavaScript. Proficient in React, Node.js, and Firebase, I focus on creating
+            and JavaScript. Proficient in React, Node.js, and, Angular, Firebase, I focus on creating
             user-friendly interfaces for clients. My expertise extends to React external libraries
             like <span className="purple">react-speech-recognition</span>,<span className="purple">plotly.js</span> ,<span className="purple">recharts</span>, <span className="purple">useTts</span>, and <span className="purple"> typed.js</span>, as well as Node.js
             tools such as <span className="purple">nodemailer</span>  and <span className="purple"> Google Generative AI integration</span>. In CSS, I am skilled with
